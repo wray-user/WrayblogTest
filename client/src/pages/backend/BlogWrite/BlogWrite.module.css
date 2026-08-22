@@ -1,0 +1,52 @@
+.layout {
+  min-height: 360px;
+}
+
+
+.categories {
+  height: 30px;
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.category {
+  min-width: 72px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #d8e3f4;
+  border-bottom: 0;
+  border-radius: 5px 5px 0 0;
+  background: #dbe6f6;
+  color: #0f172a;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.category:hover {
+  background: #eef5ff;
+}
+
+.cateBody {
+  color: inherit;
+  font-size: 12px;
+  align-items: center;
+}
+
+.categoryActive {
+  position: relative;
+  background: rgb(182, 201, 231);
+  border-color: rgb(167, 189, 225);
+}
+
+.gap  {
+  height: 20px;
+  background: rgb(182, 201, 231);
+}
+
+/* .main {
+  border-left: 1px solid gray;
+  border-bottom: 1px solid gray;
+} */
+

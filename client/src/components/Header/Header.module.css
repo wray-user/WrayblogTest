@@ -1,0 +1,215 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5000;
+  /* background: rgba(187,255,255,0.1); */
+  background: rgba(255,255,255,1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  pointer-events: auto;
+}
+
+.inner {
+  width: min(1200px, calc(100% - 48px));
+  min-height: 55px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0px;
+}
+
+
+.logo {
+  z-index: 1000;
+  width: 40px;
+  height: auto;
+  margin: 0 16px 0 0;
+  border-radius: 50%;
+  object-fit: contain;
+  padding: 0;
+  background: transparent;
+  mix-blend-mode: multiply;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex: 1;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.navItem {
+  position: relative;
+  padding: 6px 3px;
+  /* color: rgba(255,255,255,0.86); */
+  color: rgba(0,0,0,0.9);
+  text-decoration: none;
+  font-size: 0.98rem;
+}
+
+/* 实现下划线效果，::after 创建伪元素 */
+.navItem::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: center;
+  background: #22D3EE;
+  transition: transform 0.2s ease;
+}
+
+.navItem:hover::after,
+.navItem:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.actions {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+  /* color: #3f4a5a; */
+}
+
+.theme {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.themeIcon,
+.searchIcon,
+.loginIcon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+/* .themeIcon:hover,
+.searchIcon:hover,
+.loginIcon:hover {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  padding: 2px;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 50%;
+  cursor: pointer;
+} */
+
+.themeIcon svg {
+  width: 25px;
+  height: 25px;
+}
+
+.searchIcon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.searchIcon::after,
+.loginIcon::after {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #000000;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px) saturate(140%);
+}
+
+.searchIcon::after {
+  content: 'search';
+}
+
+.loginIcon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.loginIcon::after {
+  content: 'login';
+}
+
+.searchIcon:hover::after,
+.themeIcon:hover::after, 
+.loginIcon:hover::after {
+  opacity: 1;
+}
+
+.themeMenu {
+  position: absolute;
+  top: calc(100%);
+  right: 0;
+  width: 150px;
+  padding: 8px 0;
+  background: rgba(255, 255, 255,1);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 5px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.16);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
+}
+
+.themeMenuOpen {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.themeMenu button {
+  width: 100%;
+  height: 44px;
+  padding: 0 18px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: Microsoft JhengHei;
+  text-align: left;
+}
+
+.themeMenu button:hover {
+  background: #f8fafcd6;
+  color: #2563eb;
+}
+
+.themeMenu button + button {
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.themeMenu svg {
+  width: 18px;
+  height: 18px;
+}

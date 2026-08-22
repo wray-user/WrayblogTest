@@ -1,0 +1,40 @@
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #edf3f5;
+}
+
+.panel {
+  width: min(420px, calc(100% - 32px));
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+}
+
+.form {
+  display: grid;
+  gap: 16px;
+}
+
+.form label {
+  display: grid;
+  gap: 6px;
+}
+
+.form input {
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid rgba(15, 23, 42, 0.16);
+  border-radius: 6px;
+}
+
+.form button {
+  height: 42px;
+  border: 0;
+  border-radius: 6px;
+  background: #0e9fb5;
+  color: white;
+  cursor: pointer;
+}

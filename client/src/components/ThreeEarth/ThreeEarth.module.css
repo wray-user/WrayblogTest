@@ -1,0 +1,41 @@
+.threeEarthBox {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: auto;
+  overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65)),
+              url('/img/star.png') center / cover no-repeat;
+  pointer-events: none;
+}
+
+.threeEarthCanvas {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.earthControlArea {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: min(28vh, 240px);
+  z-index: 900;
+  pointer-events: auto;
+  cursor: grab;
+  touch-action: none;
+}
+
+.earthControlArea:active {
+  cursor: grabbing;
+}
+
+.earthView{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}

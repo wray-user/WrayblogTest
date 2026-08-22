@@ -1,0 +1,321 @@
+.main {
+    padding: 10px;
+    min-height: 40px;
+    /* border: 1px solid gray; */
+    display: grid;
+    gap: 10px;
+}
+
+.state {
+    display: flex;
+    height: 30px;
+    background: rgb(212, 224, 236);
+    border-radius: 8px;
+    margin-top: 10px;
+    justify-content: left;
+    align-items: center;
+}
+
+.state span {
+    padding-left: 20px;
+    font-size: 0.8em;
+}
+
+.title {
+    display: grid;
+    grid-template-rows: repeat(2, max-content);
+    gap: 5px;
+}
+
+.note {
+    font-size: 0.8em;
+}
+
+.titleInput {
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+  padding: 0 12px;
+  border: 2px solid #6f8fc4;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #111827;
+  font-size: 14px;
+  outline: none;
+}
+
+.titleInput:focus {
+  border-color: #4f7fc9;
+  box-shadow: 0 0 0 2px rgba(79, 127, 201, 0.14);
+}
+
+.titleInput::placeholder {
+  color: #9ca3af;
+}
+
+.contetNote {
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit {
+  position:relative;
+  width: 100%;
+  border: 1px solid #dbe6f3;
+  border-radius: 10px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.edit :global(.w-md-editor-toolbar) {
+  display: flex;
+  box-shadow: none;
+  background:rgba(245, 245, 245,1);
+  height: 40px;
+}
+
+.commandIcon {
+  width: 14px;
+  height: 14px;
+  color: #000000;
+  fill: #000000;
+}
+
+.edit :global(.w-md-editor-toolbar) {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  background: rgba(245, 245, 245, 1);
+}
+
+.edit :global(.w-md-editor-toolbar ul) {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.edit :global(.w-md-editor-toolbar-divider) {
+  flex: 0 0 1px;
+  width: 1px;
+  height: 18px;
+  margin: 0 8px;
+  background: #747171;
+  align-self: center;
+}
+
+.edit :global(.w-md-editor-toolbar button[data-name="capitalize"]),
+.edit :global(.w-md-editor-toolbar button[data-name="uppercase"]),
+.edit :global(.w-md-editor-toolbar button[data-name="lowercase"]) {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.previewToggleIcon {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+}
+
+.previewIcon {
+  grid-area: 1 / 1;
+  width: 18px;
+  height: 18px;
+  color: #000;
+  fill: #000;
+}
+
+.iconVisible {
+  opacity: 1;
+}
+
+.iconHidden {
+  opacity: 0;
+}
+
+.editorPreviewOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  background: #ffffff;
+  overflow: auto;
+}
+
+.editorPreviewContent {
+  min-height: 100%;
+  padding: 48px 50px 64px;
+  box-sizing: border-box;
+}
+
+.editorPreviewClose {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  z-index: 21;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 50%;
+  background: #c9c9c9;
+  color: #ffffff;
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 700;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  padding: 0;
+}
+
+.editorPreviewClose:hover {
+  background: #9ca3af;
+  color:rgb(74, 74, 246);
+}
+
+.tableModalMask {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: rgba(0, 0, 0, 0.12);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.tableModal {
+  width: 360px;
+  background: #fff;
+  border: 1px solid #dcdfe6;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.tableModalHeader {
+  height: 35px;
+  padding: 0 24px;
+  border-bottom: 1px solid #ebeef5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tableModalHeader strong {
+  color: gray;
+  font-size: 0.85em;
+}
+
+.tableModalHeader button {
+  border: none;
+  background: transparent;
+  color: #b6b8be;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.tableModalHeader button:hover {
+  border: none;
+  background: transparent;
+  color: #7a7d84;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.tableModalBody {
+  padding: 20px 26px;
+  display: grid;
+  gap: 18px;
+}
+
+.tableSizeRow {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 0.9em;
+  color:gray;
+}
+
+.tableSize {
+  display: flex;
+  gap: 8px;
+}
+
+.tableModalBody label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 14px;
+}
+
+.tableModalBody input[type="number"] {
+  width: 48px;
+  height: 25px;
+  border: 1px solid #dcdfe6;
+  padding: 0 8px;
+  font-size: 14px;
+  color:#323336;
+  appearance: auto;
+}
+
+.alignGroup {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 0.9em;
+  color:gray;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+}
+
+.alignOption {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+}
+
+.alignOption input[type="radio"] {
+  margin: 0;
+}
+
+.alignIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alignIcon .commandIcon,
+.alignIcon svg {
+  width: 17px;
+  height: 17px;
+  color: #747070;
+  fill: #747070;
+}
+
+.tableModalFooter {
+  padding: 0px 12px 12px ;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.tableModalFooter button {
+  min-width: 50px;
+  height: 25px;
+  border: 1px solid #dcdfe6;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  color:gray;
+  font-size: 0.8em;
+}
+
+.tableModalFooter button:hover {
+  background: #cdcbcb;
+}
+
