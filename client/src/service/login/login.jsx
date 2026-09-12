@@ -37,8 +37,11 @@ const Login = () => {
 
       const data = await res.json();
       localStorage.setItem('token', data.token);
+      if (data.user) {
+        localStorage.setItem('user', JSON.stringify(data.user));
+      }
       navigate('/admin');
-    } catch (error) {
+    } catch {
       alert('登录失败，请检查后端服务是否启动');
     } finally {
       setLoading(false);

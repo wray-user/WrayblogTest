@@ -3,8 +3,8 @@ import styles from './BlogWrite.module.css';
 
 const categories = [
   {label: '技术分享',href: '/admin/write/tech',},
-  {label: '学习记录', href: '/admin/write/study',},
   {label: '心情随笔',href: '/admin/write/note',},
+  {label: '学习记录', href: '/admin/write/study',},
 ];
 
 const BlogWrite = () => {

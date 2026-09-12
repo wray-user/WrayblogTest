@@ -1,0 +1,157 @@
+.tagAddForm {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tagAddInput {
+  flex: 1;
+  min-width: 0;
+  height: 34px;
+  padding: 0 10px;
+  border: 1px solid #cfd8e3;
+  border-radius: 4px;
+  color: #111827;
+  font-size: 14px;
+  outline: none;
+}
+
+.tagAddInput:focus {
+  border-color: #4f7fc9;
+  box-shadow: 0 0 0 2px rgba(79, 127, 201, 0.12);
+}
+
+.tagAddForm button {
+  height: 34px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 4px;
+  background: #4f7fc9;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.tagAddForm button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.imageCard {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #dbe3ef;
+  border-radius: 6px;
+  background: #fbfdff;
+  outline: none;
+}
+
+.imageCard:focus-within {
+  box-shadow: 0 0 0 2px rgba(79, 127, 201, 0.12);
+}
+
+.imagePreview {
+  position: relative;
+  width: 112px;
+  height: 112px;
+  border: 1px solid #dbe3ef;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #f8fbff;
+}
+
+.imagePreview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imagePlaceholder {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  color: #94a3b8;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.imagePlaceholder strong {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.imagePlaceholder span {
+  display: block;
+}
+
+.removeImageButton {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 24px;
+  height: 24px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.72);
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.removeImageButton:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.imageBody {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.imageBody input {
+  display: none;
+}
+
+.imageActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.uploadButton,
+.clearButton {
+  height: 32px;
+  min-width: 78px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 4px;
+  background: #4f7fc9;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.uploadButton:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+@media (max-width: 760px) {
+  .imageCard {
+    grid-template-columns: 1fr;
+  }
+
+  .imagePreview {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    height: auto;
+  }
+}

@@ -1,12 +1,12 @@
 .topSection {
   box-sizing: border-box;
-  height: 50vh;          /* 占满一屏 */
+  height: 50vh;          /* 鍗犳弧涓€灞?*/
   background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65)),
               url('/img/star.jpg') center / cover no-repeat;
 }
 
 .head {
-  position: relative;     /* 作为 ThreeEarth 的定位父级 */
+  position: relative;     /* 浣滀负 ThreeEarth 镄勫畾浣岖埗绾?*/
   box-sizing: border-box;
   min-height: 40vh;
   overflow: hidden;       /* 地球超出部分裁掉 */
@@ -87,10 +87,10 @@
 .main {
   height: max-content; 
   display: grid;
-  grid-template-columns: minmax(0, 1000px) 300px;
+  grid-template-columns: minmax(0, 1000px) 260px;
   grid-template-rows: max-content;
   justify-content: right;
-  gap: 80px;
+  gap: 64px;
   background:  #edf3f5;
   padding: 14px 0px 0 20px;
   position:relative;
@@ -113,6 +113,12 @@
   gap: 20px;
   margin-left: 40px;
   padding: 16px 0 18px;
+}
+
+.categoryItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .category {
@@ -144,36 +150,38 @@
 }
 
 .posts {
-    display: grid;
-    /* grid-row: 2; */
-
-
+  display: grid;
+  gap: 0;
 }
 
 .post {
   display: grid;
   width: 100%;
-  height: 140px;
-  margin: 0px 10px 10px 30px;
+  min-height: 138px;
+  margin: 0 10px 0 30px;
 }
 
 .postBody {
   grid-column: 1;
   min-width: 0;
-  padding-bottom: 10px;
+  padding: 0 0 14px;
   border-bottom: solid 0.05em rgba(160, 160, 160,0.4 );
 }
 
 .postTitle h2 {
   grid-row: 1;
   color: black;
-  font-size: 1.2em;
-  font-family: KaiTi;
+  font-size: 1.24em;
+  font-family: KaiTi, STKaiti, serif;
+  margin: 14px 0 12px;
+  line-height: 1.35;
+  font-weight: 700;
 }
 
 .postTitle h2 a {
   color: rgba(15, 23, 42, 0.92);
   text-decoration: none;
+  transition: color 0.18s ease;
 }
 
 .postTitle h2 a:visited {
@@ -187,17 +195,16 @@
 .postMain {
   grid-row: 2;
   display:grid;
-  grid-template-columns: 64px minmax(0, 1fr);
-  gap: 10px;
+  grid-template-columns: 82px minmax(0, 1fr);
+  gap: 16px;
   align-items: start;
-  font-size: 1.1em;
   font-size: 1em;
-  font-family: STZhongsong;
+  font-family: STZhongsong, SimSun, serif;
 }
 
 .postCover {
-  width: 64px;
-  height: 64px;
+  width: 72px;
+  height: 72px;
   object-fit: cover;
   padding: 3px;
   border: 1px solid rgba(15, 23, 42, 0.18);
@@ -205,46 +212,40 @@
 
 .postExcerpt {
   margin: 0;
-  color: rgba(30, 41, 59, 0.88);
-  font-size: 0.95em;
-  line-height: 1.2;
+  color: rgba(30, 41, 59, 0.82);
+  font-size: 1em;
+  line-height: 1.55;
   overflow: hidden;
   text-align: justify;
   display: -webkit-box;
   -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 
 .postMeta {
-  margin-top: 10px;
+  margin-top: 12px;
   display: flex;
-  gap: 1.3em;
-  font-family: NSimSun;
+  gap: 1.25em;
+  font-family: NSimSun, SimSun, serif;
   font-size: 0.95em;
   align-items: center;
+  color: rgba(51, 65, 85, 0.82);
 }
 
 .author {
   display: flex;
-  gap: 0.8em;
+  gap: 0.7em;
 }
 
 .authorName {
-  text-decoration: none;
-  font-size: 1.2em;
-}
-
-.authorName:visited {
-  color: rgba(2, 43, 141, 0.92);
-
-}
-
-.authorName:hover {
-  color: #0e9fb5;
+  font-size: 1.15em;
 }
 
 .author img{
-    width: 22px;
-    height: auto;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .mateWord {
@@ -270,9 +271,7 @@
   align-items: center;
   gap: 4px;
   color: rgba(100, 116, 139, 0.78);
-  text-decoration: none;
   font-size: 0.9em;
-  transition: color 0.18s ease;
 }
 
 .postStatLink svg {
@@ -281,130 +280,314 @@
   color: currentColor;
 }
 
-.postStatLink:hover {
-  color: #0e9fb5;
-}
-
-
-
-
-.aside {
-  margin-top: -14px;
+.emptyState {
   display: grid;
-  width: 300px;
-  background: rgb(212, 212, 212, 0.3);
-  justify-content: center;
+  min-height: 220px;
+  place-items: center;
+  margin-left: 30px;
+  color: rgba(30, 52, 60, 0.72);
+  font-size: 0.95rem;
 }
 
-/* profile */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 22px 0 6px 30px;
+  color: rgba(30, 52, 60, 0.72);
+  font-family: NSimSun;
+}
+
+.paginationDock {
+  position: sticky;
+  bottom: 0;
+  z-index: 30;
+  padding: 12px 0 0;
+  margin-top: 14px;
+  background: linear-gradient(
+    to top,
+    rgba(237, 243, 245, 0.98),
+    rgba(237, 243, 245, 0.88) 72%,
+    rgba(237, 243, 245, 0)
+  );
+}
+
+.pagination button {
+  height: 32px;
+  padding: 0 14px;
+  border: 1px solid rgba(108, 124, 133, 0.18);
+  border-radius: 999px;
+  background: rgba(248, 250, 251, 0.92);
+  color: rgba(56, 71, 78, 0.84);
+  cursor: pointer;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.85) inset;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+  border-color: rgba(108, 124, 133, 0.3);
+  background: rgba(242, 246, 248, 0.98);
+  color: rgba(31, 41, 55, 0.92);
+  transform: translateY(-1px);
+}
+
+.pagination button:disabled {
+  color: #94a3b8;
+  cursor: default;
+  opacity: 0.58;
+}
+
+.paginationActive {
+  background: rgba(220, 227, 231, 0.95) !important;
+  border-color: rgba(108, 124, 133, 0.34) !important;
+  color: rgba(31, 41, 55, 0.96) !important;
+}
+
+.paginationEllipsis {
+  color: rgba(30, 52, 60, 0.52);
+  font-size: 0.9rem;
+  user-select: none;
+}
+.aside {
+  align-self: start;
+  position: sticky;
+  top: 24px;
+  display: grid;
+  gap: 16px;
+  width: 292px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
 .profile {
-    grid-row: 1;
-    z-index: 1000;
-    display: grid;
-    width: 280px;
-    min-height: 130px;
-    grid-template-rows: auto auto;
-    gap: 25px;
-    padding: 16px 20px;
-    border-radius: 22px;
-    /* background: white; */
-    /* box-shadow: 0 18px 40px rgba(97, 55, 22, 0.06); */
+  display: grid;
+  width: 100%;
+}
+
+.profileCard,
+.sideSection {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.profileCard {
+  display: grid;
+  gap: 22px;
+  padding: 14px 8px 10px;
 }
 
 .avatar {
-    display: grid;
-    gap: 20px;
-    justify-content: center;
-    justify-items: center;
-    text-align: center;
+  position: static;
+  display: grid;
+  gap: 7px;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
 }
+
 
 .avatar img {
-  grid-row: 1;
-  margin-top: 10px;
-  width: 100px; 
-  height: auto;
-  align-items: center;
-  animation: avatarRotate 8s linear infinite;
-  transform-origin: center;
+  width: 82px;
+  height: 82px;
+  margin-bottom: 2px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-.avatar img:hover {
-  animation: none;
-  transform: rotate(0deg);
-}
-
-@keyframes avatarRotate {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+.avatar strong {
+  color: rgba(15, 23, 42, 0.92);
+  font-size: 1.08rem;
+  letter-spacing: 0.04em;
 }
 
 .avatar span {
-  font-family: STXinwei;
-    color: black;
-    font-size: 1em;
-    letter-spacing: 0.1em;
+  color: rgba(71, 85, 105, 0.8);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
 }
 
 .stats {
   display: grid;
-  grid-row: 2;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
 }
 
 .statItem {
   display: grid;
-  padding: 0px;
-  border-radius: 8px;
-  background: transparent;
-  justify-content: center;
-  align-items: center;
-  border: 0.5px solid rgba(240, 239, 239, 0.5);
-  padding: 5px;
+  min-height: 58px;
+  place-items: center;
+  align-content: center;
+  gap: 7px;
 }
 
-.statItem strong{
+.statItem strong {
   display: block;
-  color: rgba(0, 0, 0, 0.96);
+  color: #123b49;
   text-align: center;
+  font-size: 1.35rem;
+  line-height: 1;
 }
 
 .statItem span {
-  color: rgba(0, 0, 0, 0.78);
-  font-size: 0.75rem;
+  color: rgba(71, 85, 105, 0.82);
+  font-size: 0.78rem;
   text-align: center;
 }
 
 .social {
-  display: grid;
-  grid-row: 3;
-  grid-template-columns: max-content max-content max-content max-content;
+  display: flex;
   width: 100%;
-  gap: 24px;
   justify-content: center;
+  gap: 10px;
+  padding-top: 2px;
 }
-
 
 .socialLink {
-  width: 30px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  display:grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  align-items: center;
-  justify-items: center;
-  /* background-color: black; */
-  /* filter: invert(1); */
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  opacity: 0.72;
+  transition: opacity 0.18s ease, transform 0.18s ease;
 }
 
+.socialLink img {
+  width: 23px;
+  height: 23px;
+  object-fit: contain;
+}
 
+.socialLink:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+}
 
+.sideSection {
+  padding: 12px 8px 14px;
+}
+
+.sideSectionHead {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 14px;
+  color: rgba(15, 23, 42, 0.92);
+  font-size: 1rem;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.sideSection:first-of-type {
+  margin-top: 0;
+}
+
+.sideSection + .sideSection {
+  padding-top: 18px;
+}
+
+.sidePosts {
+  display: grid;
+  gap: 3px;
+}
+
+.sidePost {
+  display: block;
+  padding: 7px 0;
+  color: rgba(30, 52, 60, 0.78);
+  text-decoration: none;
+  transition: color 0.18s ease, transform 0.18s ease;
+}
+
+.sidePost:hover {
+  color: #0e9fb5;
+  transform: translateX(3px);
+}
+
+.sidePost strong {
+  display: -webkit-box;
+  color: rgba(15, 23, 42, 0.84);
+  font-size: 0.84rem;
+  font-weight: 500;
+  line-height: 1.55;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.sideEmpty {
+  min-height: 48px;
+  display: grid;
+  place-items: center;
+  color: rgba(30, 52, 60, 0.56);
+  font-size: 0.86rem;
+}
 .Profile {
     grid-row: 1;
+}
+
+@media (max-width: 1100px) {
+  .main {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    justify-content: stretch;
+    padding-right: 20px;
+  }
+
+  .content {
+    grid-column: auto;
+  }
+
+  .aside {
+    position: static;
+    width: 100%;
+  }
+
+  .profile {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .main {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .categorys,
+  .post,
+  .emptyState,
+  .pagination {
+    margin-left: 0;
+  }
+
+  .postMain {
+    grid-template-columns: 1fr;
+  }
+
+  .postCover {
+    width: 100%;
+    height: 180px;
+  }
+
+  .postMeta {
+    flex-wrap: wrap;
+    gap: 10px 14px;
+  }
+
+  .postStats {
+    margin-left: 0;
+  }
+
+  .aside {
+    padding: 8px 0 22px;
+  }
+
+  .sidePost {
+    padding: 10px 10px;
+  }
 }

@@ -1,0 +1,247 @@
+.page {
+  display: grid;
+  gap: 14px;
+  color: #344054;
+}
+
+.headerPanel,
+.createPanel,
+.listPanel,
+.forbiddenPanel {
+  border: 1px solid #e6ebf2;
+  background: #ffffff;
+  border-radius: 6px;
+}
+
+.headerPanel {
+  min-height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 20px 22px;
+}
+
+.headerPanel h2,
+.createPanel h3,
+.listPanel h3 {
+  margin: 0;
+  color: #111827;
+  font-weight: 600;
+}
+
+.headerPanel h2 {
+  font-size: 22px;
+}
+
+.headerPanel p {
+  margin: 8px 0 0;
+  color: #64748b;
+}
+
+.roleBadge {
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #bfd3f8;
+  border-radius: 999px;
+  background: #f4f8ff;
+  color: #1d4ed8;
+  padding: 0 14px;
+  font-size: 13px;
+}
+
+.createPanel {
+  padding: 18px 20px;
+}
+
+.createPanel h3,
+.listPanel h3 {
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+.createForm {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(130px, 1fr)) 120px;
+  gap: 12px;
+  align-items: end;
+}
+
+.createForm label {
+  display: grid;
+  gap: 7px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.createForm input,
+.createForm select {
+  height: 36px;
+  box-sizing: border-box;
+  border: 1px solid #d8e2ee;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #111827;
+  outline: none;
+  padding: 0 10px;
+}
+
+.createForm input:focus,
+.createForm select:focus {
+  border-color: #409eff;
+  box-shadow: 0 0 0 2px rgba(64, 158, 255, 0.14);
+}
+
+.primaryButton,
+.deleteButton,
+.linkButton {
+  height: 36px;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0 16px;
+}
+
+.primaryButton {
+  background: #2f6edb;
+}
+
+.deleteButton {
+  background: #f56c6c;
+}
+
+.linkButton {
+  background: transparent;
+  color: #2f6edb;
+}
+
+.primaryButton:disabled,
+.deleteButton:disabled,
+.linkButton:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.message {
+  border: 1px solid #bfd3f8;
+  background: #f4f8ff;
+  color: #1d4ed8;
+  border-radius: 4px;
+  padding: 10px 12px;
+}
+
+.error {
+  border-color: #fecaca;
+  background: #fff1f2;
+  color: #be123c;
+}
+
+.listPanel {
+  min-height: 420px;
+  padding: 18px 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.table th,
+.table td {
+  height: 56px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  padding: 0 10px;
+}
+
+.table th {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.userCell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar,
+.avatarFallback {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #eef5ff;
+}
+
+.avatarFallback {
+  display: grid;
+  place-items: center;
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
+.userName {
+  display: grid;
+  gap: 4px;
+}
+
+.userName strong {
+  color: #111827;
+  font-weight: 600;
+}
+
+.userName span,
+.muted {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.roleTag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 62px;
+  height: 26px;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 12px;
+}
+
+.roleAdmin {
+  background: #eef5ff;
+  color: #1d4ed8;
+}
+
+.emptyCell {
+  text-align: center !important;
+  color: #64748b;
+}
+
+.forbiddenPanel {
+  min-height: 360px;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+  text-align: center;
+}
+
+.forbiddenPanel h2 {
+  margin: 0 0 8px;
+}
+
+.forbiddenPanel p {
+  margin: 0;
+  color: #64748b;
+}
+
+@media (max-width: 960px) {
+  .createForm {
+    grid-template-columns: 1fr 1fr;
+  }
+}

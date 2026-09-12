@@ -16,6 +16,7 @@ await User.findOneAndUpdate(
   { username },
   {
     username,
+    nickname: '管理员',
     passwordHash,
     role: 'admin',
   },

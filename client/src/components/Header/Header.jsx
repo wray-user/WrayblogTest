@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './Header.module.css';
 import { Link } from 'react-router-dom';
 
@@ -11,62 +11,56 @@ const navItems = [
   { label: '监控', href: '/monitoring' },
   { label: '探针', href: '/probe' },
   { label: '关于我', href: '/about' },
-  { label: '开往', href: '/travelling' },
-];
-
-const themeOptions = [
-  { value: 'dark', label: 'Dark' },
-  { value: 'light', label: 'Light' },
+  { label: '远行', href: '/travelling' },
 ];
 
 const SunIcon = () => (
-  <svg className="light" aria-hidden="true">
-    <use href="#icon-taiyang1"></use>
+  <svg aria-hidden="true">
+    <use href="#icon-taiyang1" />
   </svg>
-  
 );
 
 const MoonIcon = () => (
-  <svg className="dark" aria-hidden="true">
-    <use href="#icon-yueliang"></use>
+  <svg aria-hidden="true">
+    <use href="#icon-yueliang" />
   </svg>
 );
 
 const SearchIcon = () => (
-  <svg className={styles.search} aria-hidden="true" >
-    <use href="#icon-search"></use>
+  <svg aria-hidden="true">
+    <use href="#icon-search" />
   </svg>
 );
 
 const LoginIcon = () => (
-    <svg className="search" aria-hidden="true">
-    <use href="#icon-admin"></use>
+  <svg aria-hidden="true">
+    <use href="#icon-admin" />
   </svg>
-)
+);
 
 const getStoredTheme = () => {
   if (typeof window === 'undefined') {
     return 'light';
   }
 
-const mode = window.localStorage.getItem('themeMode');
+  const mode = window.localStorage.getItem('themeMode');
   return mode === 'dark' || mode === 'light' ? mode : 'light';
 };
 
-const Header = ({posts = [] }) => {
-  const [popOpen, setPopOpen] = useState(false);
-  const themeRef = useRef(null);
+const Header = () => {
   const [theme, setTheme] = useState(getStoredTheme);
+  const [themeMenuOpen, setThemeMenuOpen] = useState(false);
+
   const changeTheme = (mode) => {
     setTheme(mode);
     window.localStorage.setItem('themeMode', mode);
     document.documentElement.dataset.theme = mode;
   };
-  const [themeMenuOpen, setThemeMenuOpen] = useState(false);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
   }, [theme]);
+
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
@@ -83,48 +77,57 @@ const Header = ({posts = [] }) => {
         </nav>
 
         <div className={styles.actions}>
-          <div className={styles.theme} 
-          onMouseEnter={() => setThemeMenuOpen(true)}
-          onMouseLeave={() => setThemeMenuOpen(false)}>
+          <div
+            className={styles.theme}
+            onMouseEnter={() => setThemeMenuOpen(true)}
+            onMouseLeave={() => setThemeMenuOpen(false)}
+          >
             <div className={styles.themeIcon}>
               {theme === 'dark' ? <MoonIcon /> : <SunIcon />}
             </div>
 
             <div className={`${styles.themeMenu} ${themeMenuOpen ? styles.themeMenuOpen : ''}`}>
-              <button type="button" 
-              onClick={() => {changeTheme('light')
-              setThemeMenuOpen(false);
-              }}>
+              <button
+                type="button"
+                onClick={() => {
+                  changeTheme('light');
+                  setThemeMenuOpen(false);
+                }}
+              >
                 <SunIcon />
                 <span>Light</span>
               </button>
 
-              <button type="button" 
-              onClick={() => {changeTheme('dark');
-              setThemeMenuOpen(false);}}>
+              <button
+                type="button"
+                onClick={() => {
+                  changeTheme('dark');
+                  setThemeMenuOpen(false);
+                }}
+              >
                 <MoonIcon />
                 <span>Dark</span>
               </button>
             </div>
           </div>
 
-
-          <button className={styles.searchIcon}>
-            <SearchIcon/>
+          <button type="button" className={styles.searchIcon}>
+            <SearchIcon />
           </button>
-            <Link 
-              to="/login" 
-              target="_blank"
-              className={styles.loginIcon} 
-              aria-label="登录" 
-              title="登录">
-              <LoginIcon />
-            </Link>
+
+          <Link
+            to="/login"
+            target="_blank"
+            className={styles.loginIcon}
+            aria-label="登录"
+            title="登录"
+          >
+            <LoginIcon />
+          </Link>
         </div>
       </div>
     </header>
   );
 };
-
 
 export default Header;

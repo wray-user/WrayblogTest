@@ -1,0 +1,535 @@
+{
+  "format": "wrayblog-content-export",
+  "version": 1,
+  "exportedAt": "2026-09-12T15:24:27.397Z",
+  "database": "wrayblog",
+  "includedCollections": [
+    "users-public",
+    "posts",
+    "categorytags",
+    "tags",
+    "media-referenced"
+  ],
+  "excludedCollections": [
+    "editorbackups",
+    "visits",
+    "studyRecords",
+    "comment"
+  ],
+  "notes": [
+    "User password hashes and secrets are intentionally excluded.",
+    "Only media referenced by content or the Wray avatar is included.",
+    "All exported posts, categories, and tags currently belong to Wray."
+  ],
+  "counts": {
+    "users": 2,
+    "posts": 13,
+    "categoryTags": 22,
+    "tags": 8,
+    "images": 33,
+    "videos": 0,
+    "audios": 0
+  },
+  "missingMedia": [],
+  "media": {
+    "images": [
+      {
+        "id": "6a982d4b3142b03582ae8b41",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 4175,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-02T14:06:03.782Z",
+        "updatedAt": "2026-09-02T14:06:03.782Z",
+        "file": "media/images/6a982d4b3142b03582ae8b41.png"
+      },
+      {
+        "id": "6a982d803142b03582ae8b43",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 5423,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-02T14:06:56.663Z",
+        "updatedAt": "2026-09-02T14:06:56.663Z",
+        "file": "media/images/6a982d803142b03582ae8b43.png"
+      },
+      {
+        "id": "6a982e543142b03582ae8b46",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 43219,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-02T14:10:28.429Z",
+        "updatedAt": "2026-09-02T14:10:28.429Z",
+        "file": "media/images/6a982e543142b03582ae8b46.png"
+      },
+      {
+        "id": "6a98d039bd708a811fcd43f4",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 7618,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-03T01:41:13.900Z",
+        "updatedAt": "2026-09-03T01:41:13.900Z",
+        "file": "media/images/6a98d039bd708a811fcd43f4.png"
+      },
+      {
+        "id": "6a9a8002271866d2cc6c8a3f",
+        "originalName": "1697x981-px-Artifacts-black-brown-clothes-eyes-1855075-wallhere.com.jpg",
+        "mimeType": "image/jpeg",
+        "size": 170934,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-04T08:23:30.607Z",
+        "updatedAt": "2026-09-04T08:23:30.607Z",
+        "file": "media/images/6a9a8002271866d2cc6c8a3f.jpg"
+      },
+      {
+        "id": "6a9a82d753c7a793846c3a2c",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 126611,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-04T08:35:35.069Z",
+        "updatedAt": "2026-09-04T08:35:35.069Z",
+        "file": "media/images/6a9a82d753c7a793846c3a2c.png"
+      },
+      {
+        "id": "6a9a9c423b5cec4445db3d54",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 247885,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-04T10:24:02.661Z",
+        "updatedAt": "2026-09-04T10:24:02.661Z",
+        "file": "media/images/6a9a9c423b5cec4445db3d54.png"
+      },
+      {
+        "id": "6a9bc2c1166205db255db4c2",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 73388,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-05T07:20:33.180Z",
+        "updatedAt": "2026-09-05T07:20:33.180Z",
+        "file": "media/images/6a9bc2c1166205db255db4c2.png"
+      },
+      {
+        "id": "6a9bc3b9166205db255db4c5",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 184955,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-05T07:24:41.189Z",
+        "updatedAt": "2026-09-05T07:24:41.189Z",
+        "file": "media/images/6a9bc3b9166205db255db4c5.png"
+      },
+      {
+        "id": "6a9bc57d166205db255db4c6",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 60204,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-05T07:32:13.157Z",
+        "updatedAt": "2026-09-05T07:32:13.157Z",
+        "file": "media/images/6a9bc57d166205db255db4c6.png"
+      },
+      {
+        "id": "6a9bc906166205db255db4cb",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 107590,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-05T07:47:18.258Z",
+        "updatedAt": "2026-09-05T07:47:18.258Z",
+        "file": "media/images/6a9bc906166205db255db4cb.png"
+      },
+      {
+        "id": "6a9bcc7d166205db255db4cd",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 212930,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-05T08:02:05.869Z",
+        "updatedAt": "2026-09-05T08:02:05.869Z",
+        "file": "media/images/6a9bcc7d166205db255db4cd.png"
+      },
+      {
+        "id": "6a9bce86166205db255db4d0",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 122413,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-05T08:10:46.276Z",
+        "updatedAt": "2026-09-05T08:10:46.276Z",
+        "file": "media/images/6a9bce86166205db255db4d0.png"
+      },
+      {
+        "id": "6a9bd5a0aa78d45162d95530",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 134556,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-05T08:41:04.925Z",
+        "updatedAt": "2026-09-05T08:41:04.925Z",
+        "file": "media/images/6a9bd5a0aa78d45162d95530.png"
+      },
+      {
+        "id": "6a9bd991aa78d45162d95536",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 90367,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-05T08:57:53.941Z",
+        "updatedAt": "2026-09-05T08:57:53.941Z",
+        "file": "media/images/6a9bd991aa78d45162d95536.png"
+      },
+      {
+        "id": "6a9bdb95aa78d45162d9553a",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 65176,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-05T09:06:29.053Z",
+        "updatedAt": "2026-09-05T09:06:29.053Z",
+        "file": "media/images/6a9bdb95aa78d45162d9553a.png"
+      },
+      {
+        "id": "6a9bdd95aa78d45162d9553d",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 109051,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-05T09:15:01.656Z",
+        "updatedAt": "2026-09-05T09:15:01.656Z",
+        "file": "media/images/6a9bdd95aa78d45162d9553d.png"
+      },
+      {
+        "id": "6a9bdea5aa78d45162d9553f",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 8081,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-05T09:19:33.711Z",
+        "updatedAt": "2026-09-05T09:19:33.711Z",
+        "file": "media/images/6a9bdea5aa78d45162d9553f.png"
+      },
+      {
+        "id": "6a9bdf3daa78d45162d95542",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 44157,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-05T09:22:05.702Z",
+        "updatedAt": "2026-09-05T09:22:05.702Z",
+        "file": "media/images/6a9bdf3daa78d45162d95542.png"
+      },
+      {
+        "id": "6a9bdfa0aa78d45162d95545",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 61235,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-05T09:23:44.365Z",
+        "updatedAt": "2026-09-05T09:23:44.365Z",
+        "file": "media/images/6a9bdfa0aa78d45162d95545.png"
+      },
+      {
+        "id": "6a9be0a6aa78d45162d95547",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 159721,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-05T09:28:06.842Z",
+        "updatedAt": "2026-09-05T09:28:06.842Z",
+        "file": "media/images/6a9be0a6aa78d45162d95547.png"
+      },
+      {
+        "id": "6a9be133aa78d45162d95549",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 132242,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-05T09:30:27.368Z",
+        "updatedAt": "2026-09-05T09:30:27.368Z",
+        "file": "media/images/6a9be133aa78d45162d95549.png"
+      },
+      {
+        "id": "6a9c0c8aaa78d45162d9555c",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 77269,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-05T12:35:22.815Z",
+        "updatedAt": "2026-09-05T12:35:22.815Z",
+        "file": "media/images/6a9c0c8aaa78d45162d9555c.png"
+      },
+      {
+        "id": "6a9c0d1aaa78d45162d9555e",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 63129,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-05T12:37:46.527Z",
+        "updatedAt": "2026-09-05T12:37:46.527Z",
+        "file": "media/images/6a9c0d1aaa78d45162d9555e.png"
+      },
+      {
+        "id": "6a9c0dcaaa78d45162d9555f",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 163837,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-05T12:40:42.225Z",
+        "updatedAt": "2026-09-05T12:40:42.225Z",
+        "file": "media/images/6a9c0dcaaa78d45162d9555f.png"
+      },
+      {
+        "id": "6a9c142baa78d45162d9556f",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 119840,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-05T13:07:55.105Z",
+        "updatedAt": "2026-09-05T13:07:55.105Z",
+        "file": "media/images/6a9c142baa78d45162d9556f.png"
+      },
+      {
+        "id": "6a9c14e1aa78d45162d95570",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 73465,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-05T13:10:57.606Z",
+        "updatedAt": "2026-09-05T13:10:57.606Z",
+        "file": "media/images/6a9c14e1aa78d45162d95570.png"
+      },
+      {
+        "id": "6a9c171faa78d45162d95573",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 53219,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-05T13:20:31.081Z",
+        "updatedAt": "2026-09-05T13:20:31.081Z",
+        "file": "media/images/6a9c171faa78d45162d95573.png"
+      },
+      {
+        "id": "6a9c17e9aa78d45162d95576",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 175769,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-05T13:23:53.620Z",
+        "updatedAt": "2026-09-05T13:23:53.620Z",
+        "file": "media/images/6a9c17e9aa78d45162d95576.png"
+      },
+      {
+        "id": "6a9c17fdaa78d45162d95577",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 59622,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-05T13:24:13.336Z",
+        "updatedAt": "2026-09-05T13:24:13.336Z",
+        "file": "media/images/6a9c17fdaa78d45162d95577.png"
+      },
+      {
+        "id": "6a9c18b6aa78d45162d95578",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 33909,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-05T13:27:18.831Z",
+        "updatedAt": "2026-09-05T13:27:18.831Z",
+        "file": "media/images/6a9c18b6aa78d45162d95578.png"
+      },
+      {
+        "id": "6a9c1b1aaa78d45162d9557b",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 65980,
+        "duration": 0,
+        "uploader": {
+          "id": "6a8a6c97e5230074440f75c4",
+          "username": "admin",
+          "nickname": "admin"
+        },
+        "createdAt": "2026-09-05T13:37:30.516Z",
+        "updatedAt": "2026-09-05T13:37:30.516Z",
+        "file": "media/images/6a9c1b1aaa78d45162d9557b.png"
+      },
+      {
+        "id": "6aa52c6ccbd547ca0518ef82",
+        "originalName": "4000x3000-px-ART-astronaut-cosmonaut-Earth-helmet-1884877-wallhere.com.jpg",
+        "mimeType": "image/jpeg",
+        "size": 797506,
+        "duration": 0,
+        "uploader": {
+          "id": "6aa253bdafe443e6e79b97a5",
+          "username": "Wray",
+          "nickname": "Wray"
+        },
+        "createdAt": "2026-09-12T10:41:48.925Z",
+        "updatedAt": "2026-09-12T10:41:48.925Z",
+        "file": "media/images/6aa52c6ccbd547ca0518ef82.jpg"
+      }
+    ],
+    "videos": [],
+    "audios": []
+  }
+}

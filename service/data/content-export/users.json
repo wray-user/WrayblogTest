@@ -1,0 +1,20 @@
+[
+  {
+    "id": "6a8a6c97e5230074440f75c4",
+    "username": "admin",
+    "nickname": "admin",
+    "avatarUrl": "/api/images/6a9b949f866d1920d01ef686",
+    "role": "admin",
+    "createdAt": "2026-08-23T03:44:23.928Z",
+    "updatedAt": "2026-09-10T08:54:23.550Z"
+  },
+  {
+    "id": "6aa253bdafe443e6e79b97a5",
+    "username": "Wray",
+    "nickname": "Wray",
+    "avatarUrl": "/api/images/6aa52c6ccbd547ca0518ef82",
+    "role": "user",
+    "createdAt": "2026-09-10T06:52:45.310Z",
+    "updatedAt": "2026-09-12T10:41:50.752Z"
+  }
+]

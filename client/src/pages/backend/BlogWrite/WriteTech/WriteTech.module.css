@@ -1,3 +1,312 @@
-.main {
-    background-color: black;
+.write {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.editorArea {
+  min-width: 0;
+}
+
+.sidebar {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+  position: static;
+  max-height: none;
+  overflow: visible;
+}
+
+.panel {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #e3e8ef;
+  border-radius: 6px;
+  background: #ffffff;
+}
+
+.field,
+.summaryField {
+  display: grid;
+  gap: 8px;
+}
+
+.field > span,
+.summaryField > span,
+.accessField > span {
+  color: #111827;
+  font-size: 14px;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #111827;
+  font-size: 14px;
+}
+
+.sectionTitle button,
+.addButton,
+.emptyButton {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.sectionTitle button,
+.addButton {
+  width: 24px;
+  height: 24px;
+  color: #2f6edb;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.sectionTitle button:hover,
+.addButton:hover {
+  color: #1d4ed8;
+}
+
+.categoryRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 32px;
+  gap: 8px;
+}
+
+.field select,
+.summaryField textarea,
+.scheduleField input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #cfd8e3;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #111827;
+  font-size: 14px;
+  outline: none;
+}
+
+.field select,
+.scheduleField input {
+  height: 38px;
+  padding: 0 10px;
+}
+
+.field select:focus,
+.summaryField textarea:focus,
+.scheduleField input:focus {
+  border-color: #4f7fc9;
+  box-shadow: 0 0 0 2px rgba(79, 127, 201, 0.12);
+}
+
+.inlineGroup {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.accessField {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 15px;
+  padding-top: 35px;
+  min-height: 38px;
+  color: #111827;
+  font-size: 14px;
+}
+
+.accessField label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 32px;
+}
+
+.tagItem {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 4px 10px;
+  border: 1px solid #d1d9e6;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #334155;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.tagActive {
+  border-color: #4f7fc9;
+  background: #eef4ff;
+  color: #1f3f73;
+}
+
+.emptyButton {
+  padding: 6px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #475569;
+}
+
+.summaryField textarea {
+  min-height: 96px;
+  resize: vertical;
+  padding: 10px;
+  line-height: 1.6;
+}
+
+.coverTools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  outline: none;
+}
+
+.coverTools:focus-within {
+  box-shadow: none;
+}
+
+.coverTools input {
+  display: none;
+}
+
+.coverTools button,
+.actions button {
+  height: 32px;
+  min-width: 78px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 4px;
+  background: #4f7fc9;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.coverTools button:disabled,
+.actions button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.coverTools img {
+  width: 120px;
+  height: 68px;
+  object-fit: cover;
+  border: 1px solid #dbe3ef;
+  border-radius: 4px;
+  background: #ffffff;
+}
+
+.pasteHint {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 2px 0 0;
+}
+
+.scheduleField {
+  display: inline-grid;
+  grid-template-columns: 188px max-content;
+  gap: 8px;
+  align-items: center;
+}
+
+.shortcutText {
+  margin: 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.message {
+  padding: 8px 10px;
+  border: 1px solid #cfe0ff;
+  border-radius: 4px;
+  background: #f3f8ff;
+  color: #1d4ed8;
+  font-size: 14px;
+}
+
+.toastMessage {
+  position: fixed;
+  top: 72px;
+  left: 50%;
+  z-index: 3000;
+  transform: translateX(-50%);
+  min-width: 128px;
+  padding: 8px 16px;
+  border: 1px solid #fecaca;
+  border-radius: 4px;
+  background: #fef2f2;
+  color: #dc2626;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(185, 28, 28, 0.16);
+  pointer-events: none;
+  animation: toastFade 1.5s ease both;
+}
+
+@keyframes toastFade {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -6px);
+  }
+
+  12%,
+  82% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -6px);
+  }
+}
+
+@media (max-width: 1080px) {
+  .sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 760px) {
+  .inlineGroup {
+    grid-template-columns: 1fr;
+  }
+
+  .accessField {
+    flex-wrap: wrap;
+  }
+
+  .scheduleField {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .toastMessage {
+    left: 16px;
+    right: 16px;
+    transform: none;
+    min-width: 0;
+  }
 }

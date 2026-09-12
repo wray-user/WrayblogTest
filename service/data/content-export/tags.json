@@ -1,0 +1,66 @@
+[
+  {
+    "_id": "6a8e86ae2263f0a11b051110",
+    "name": "python",
+    "author": "6aa253bdafe443e6e79b97a5",
+    "createdAt": "2026-08-26T06:24:46.910Z",
+    "updatedAt": "2026-09-10T13:50:18.091Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a8e86b32263f0a11b051111",
+    "name": "java",
+    "author": "6aa253bdafe443e6e79b97a5",
+    "createdAt": "2026-08-26T06:24:51.790Z",
+    "updatedAt": "2026-09-10T13:50:18.091Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a8e86b92263f0a11b051112",
+    "name": "javascript",
+    "author": "6aa253bdafe443e6e79b97a5",
+    "createdAt": "2026-08-26T06:24:57.052Z",
+    "updatedAt": "2026-09-10T13:50:18.091Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a8e86bd2263f0a11b051113",
+    "name": "css",
+    "author": "6aa253bdafe443e6e79b97a5",
+    "createdAt": "2026-08-26T06:25:01.601Z",
+    "updatedAt": "2026-09-10T13:50:18.091Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a8e86c12263f0a11b051114",
+    "name": "html",
+    "author": "6aa253bdafe443e6e79b97a5",
+    "createdAt": "2026-08-26T06:25:05.402Z",
+    "updatedAt": "2026-09-10T13:50:18.091Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a98cfe8bd708a811fcd43f1",
+    "name": "react",
+    "author": "6aa253bdafe443e6e79b97a5",
+    "createdAt": "2026-09-03T01:39:52.443Z",
+    "updatedAt": "2026-09-10T13:50:18.091Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a98cfedbd708a811fcd43f2",
+    "name": "hooks",
+    "author": "6aa253bdafe443e6e79b97a5",
+    "createdAt": "2026-09-03T01:39:57.890Z",
+    "updatedAt": "2026-09-10T13:50:18.091Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a9a875753c7a793846c3a2f",
+    "name": "zotero",
+    "author": "6aa253bdafe443e6e79b97a5",
+    "createdAt": "2026-09-04T08:54:47.468Z",
+    "updatedAt": "2026-09-10T13:50:18.091Z",
+    "__v": 0
+  }
+]

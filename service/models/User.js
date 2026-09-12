@@ -8,13 +8,24 @@ const userSchema = new mongoose.Schema(
       unique: true,
       trim: true,
     },
+    nickname: {
+      type: String,
+      default: '',
+      trim: true,
+    },
+    avatarUrl: {
+      type: String,
+      default: '',
+      trim: true,
+    },
     passwordHash: {
       type: String,
       required: true,
     },
     role: {
       type: String,
-      default: 'admin',
+      enum: ['admin', 'user'],
+      default: 'user',
     },
   },
   {

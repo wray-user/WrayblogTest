@@ -10,7 +10,7 @@ const auth = (req, res, next) => {
   const token = header.replace('Bearer ', '');
 
   try {
-    const payload = jwt.verify(token, process.env.JWT_SECRET);
+    const payload = jwt.verify(token, process.env.JWT_SECRET || 'wray-blog-secret');
     req.user = payload;
     next();
   } catch {

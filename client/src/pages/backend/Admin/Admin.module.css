@@ -1,59 +1,134 @@
 .page {
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: 150px 1fr;
   background: #eef2f6;
   color: #1f2937;
 }
 
 .sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 168px;
+  overflow-y: auto;
   background: #202637;
   color: #d8dee9;
-  padding: 12px 0;
-}
-
-.logo {
-  height: 44px;
-  display: grid;
-  place-items: center;
-  font-size: 14px;
-  font-weight: 700;
+  padding: 12px 0 18px;
 }
 
 .menu {
   display: grid;
-  gap: 4px;
+  gap: 2px;
+  padding: 4px 0;
+}
+
+.userCard {
+  width: calc(100% - 24px);
+  min-height: 74px;
+  margin: 0 12px 10px;
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.16);
+  color: #f8fafc;
+  cursor: pointer;
+  padding: 10px;
+  text-align: left;
+}
+
+.userCard:hover {
+  background: rgba(64, 158, 255, 0.12);
+}
+
+.userCard img,
+.userCard span {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+}
+
+.userCard img {
+  display: block;
+  object-fit: cover;
+}
+
+.userCard span {
+  display: grid;
+  place-items: center;
+  background: #eef5ff;
+  color: #1d4ed8;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.userCard strong {
+  min-width: 0;
+  overflow: hidden;
+  color: currentColor;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .menuItem {
   width: 100%;
-  height: 40px;
+  height: 48px;
   border: 0;
-  padding: 0 10px;
+  padding: 0 18px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: flex-start;
+  gap: 12px;
   background: transparent;
   color: #d8dee9;
-  font-size: 13px;
+  font-size: 14px;
   cursor: pointer;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition:
+    background 0.18s ease,
+    color 0.18s ease;
 }
 
 .menuItem:hover,
 .active {
   color: #409eff;
   background: rgba(64, 158, 255, 0.12);
+  text-decoration: none;
 }
 
 .menuIcon {
-  width: 16px;
-  text-align: center;
-  font-size: 11px;
-  opacity: 0.8;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: currentColor;
+  flex: 0 0 22px;
+}
+
+.menuIcon svg {
+  width: 19px;
+  height: 19px;
+  display: block;
+  fill: currentColor;
+}
+
+.menuLabel {
+  min-width: 0;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .main {
   min-width: 0;
+  margin-left: 168px;
+  min-height: 100vh;
 }
 
 .header {
