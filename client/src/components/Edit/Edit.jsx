@@ -11,6 +11,39 @@ import '@uiw/react-md-editor/markdown-editor.css';
 import '@uiw/react-markdown-preview/markdown.css';
 import 'katex/dist/katex.min.css';
 
+const EMPTY_LIST_ITEM_PLACEHOLDER = String.fromCharCode(8203);
+
+const getLineRange = (text, position) => {
+    const lineStart = text.lastIndexOf('\n', Math.max(0, position - 1)) + 1;
+    const nextLineBreak = text.indexOf('\n', position);
+    const lineEnd = nextLineBreak === -1 ? text.length : nextLineBreak;
+
+    return {
+        lineStart,
+        lineEnd,
+        line: text.slice(lineStart, lineEnd),
+    };
+};
+
+const getNestedOrderedListIndent = (text, position) => {
+    const currentLine = getLineRange(text, position);
+
+    if (currentLine.line.trim() || currentLine.lineStart === 0) {
+        return '';
+    }
+
+    const previousLineEnd = currentLine.lineStart - 1;
+    const previousLineStart = text.lastIndexOf('\n', previousLineEnd - 1) + 1;
+    const previousLine = text.slice(previousLineStart, previousLineEnd);
+    const orderedPrefix = /^(\s*)(\d+\.\s+)/.exec(previousLine);
+
+    if (!orderedPrefix || !previousLine.slice(orderedPrefix[0].length).trim()) {
+        return '';
+    }
+
+    return orderedPrefix[0].replace(/[^\t]/g, ' ');
+};
+
 const Edit = ({
     onDraftChange,
     externalDraft,
@@ -1464,6 +1497,17 @@ const Edit = ({
         }
     };
 
+    const applyEditorValueChange = (textarea, nextValue, selectionStart) => {
+        textarea.value = nextValue;
+        textarea.dispatchEvent(new Event('input', { bubbles: true }));
+        setContent(nextValue);
+
+        requestAnimationFrame(() => {
+            textarea.focus();
+            textarea.setSelectionRange(selectionStart, selectionStart);
+        });
+    };
+
     const handleEditorKeyDown = (event) => {
         const isSave = (event.ctrlKey || event.metaKey)
             && !event.shiftKey
@@ -1487,7 +1531,91 @@ const Edit = ({
         }
     };
 
+    useEffect(() => {
+        const textarea = editorWrapRef.current?.querySelector('.w-md-editor-text-input');
 
+        if (!textarea) return;
+
+        const handleListKeyDown = (event) => {
+            if (
+                event.key === 'Enter'
+                && !event.shiftKey
+                && !event.ctrlKey
+                && !event.metaKey
+                && !event.altKey
+                && textarea.selectionStart === textarea.selectionEnd
+            ) {
+                const text = textarea.value;
+                const cursor = textarea.selectionStart;
+                const { lineStart, lineEnd, line } = getLineRange(text, cursor);
+
+                if (/^\s*\d+\.\s*$/.test(line) && cursor >= lineEnd) {
+                    event.preventDefault();
+                    event.stopImmediatePropagation();
+
+                    const nextValue = `${text.slice(0, lineStart)}\n${text.slice(lineEnd)}`;
+                    applyEditorValueChange(textarea, nextValue, lineStart + 1);
+                    return;
+                }
+            }
+
+            if (
+                event.key.length === 1
+                && !event.ctrlKey
+                && !event.metaKey
+                && !event.altKey
+                && textarea.selectionStart === textarea.selectionEnd
+            ) {
+                const text = textarea.value;
+                const cursor = textarea.selectionStart;
+                const placeholderStart = cursor - EMPTY_LIST_ITEM_PLACEHOLDER.length;
+
+                if (
+                    placeholderStart >= 0
+                    && text.slice(placeholderStart, cursor) === EMPTY_LIST_ITEM_PLACEHOLDER
+                ) {
+                    event.preventDefault();
+                    event.stopImmediatePropagation();
+
+                    const nextValue = `${text.slice(0, placeholderStart)}${event.key}${text.slice(cursor)}`;
+                    applyEditorValueChange(textarea, nextValue, placeholderStart + event.key.length);
+                    return;
+                }
+            }
+
+            if (
+                event.key === '-'
+                && !event.shiftKey
+                && !event.ctrlKey
+                && !event.metaKey
+                && !event.altKey
+                && textarea.selectionStart === textarea.selectionEnd
+            ) {
+                const text = textarea.value;
+                const cursor = textarea.selectionStart;
+                const { lineStart, lineEnd } = getLineRange(text, cursor);
+                const nestedIndent = getNestedOrderedListIndent(text, cursor);
+
+                if (nestedIndent) {
+                    event.preventDefault();
+                    event.stopImmediatePropagation();
+
+                    const nextValue = `${text.slice(0, lineStart)}${nestedIndent}- ${EMPTY_LIST_ITEM_PLACEHOLDER}${text.slice(lineEnd)}`;
+                    applyEditorValueChange(
+                        textarea,
+                        nextValue,
+                        lineStart + nestedIndent.length + 2 + EMPTY_LIST_ITEM_PLACEHOLDER.length
+                    );
+                }
+            }
+        };
+
+        textarea.addEventListener('keydown', handleListKeyDown, true);
+
+        return () => {
+            textarea.removeEventListener('keydown', handleListKeyDown, true);
+        };
+    }, [editorFullscreen, previewMode]);
 
     return (
         <div className={styles.main}>

@@ -6,6 +6,11 @@ const STUDY_CATEGORY = '学习记录';
 
 const pad = (value) => String(value).padStart(2, '0');
 
+const getCurrentMonth = () => {
+  const today = new Date();
+  return new Date(today.getFullYear(), today.getMonth(), 1);
+};
+
 const formatDate = (dateValue) => {
   if (!dateValue) return '';
   const date = new Date(dateValue);
@@ -26,7 +31,7 @@ const formatDuration = (hours, minutes) => {
   const finalMinutes = totalMinutes % 60;
 
   if (!finalHours) return `${finalMinutes} 分钟`;
-  if (!finalMinutes) return `${finalHours} С?`;
+  if (!finalMinutes) return `${finalHours} 小时`;
   return `${finalHours} 小时 ${finalMinutes} 分钟`;
 };
 
@@ -108,7 +113,7 @@ const StudyRecords = () => {
   const [posts, setPosts] = useState([]);
   const [keyword, setKeyword] = useState('');
   const [activeDate, setActiveDate] = useState('');
-  const [calendarMonth, setCalendarMonth] = useState(() => new Date());
+  const [calendarMonth, setCalendarMonth] = useState(getCurrentMonth);
   const [expandedTasks, setExpandedTasks] = useState({});
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
@@ -132,6 +137,31 @@ const StudyRecords = () => {
     () => createCalendarDays(calendarMonth),
     [calendarMonth]
   );
+
+  const calendarYears = useMemo(() => {
+    const currentYear = new Date().getFullYear();
+    const recordYears = records
+      .map((record) => Number(String(record.recordDate || '').slice(0, 4)))
+      .filter((year) => Number.isInteger(year) && year >= 1970 && year <= currentYear);
+    const firstYear = Math.min(currentYear, ...recordYears);
+
+    return Array.from(
+      { length: currentYear - firstYear + 1 },
+      (_, index) => firstYear + index
+    );
+  }, [records]);
+
+  const calendarMonths = useMemo(() => {
+    const currentDate = new Date();
+    const lastMonth = calendarMonth.getFullYear() === currentDate.getFullYear()
+      ? currentDate.getMonth()
+      : 11;
+
+    return Array.from(
+      { length: lastMonth + 1 },
+      (_, index) => index
+    );
+  }, [calendarMonth]);
 
   const filteredRecords = useMemo(() => {
     const searchText = keyword.trim().toLowerCase();
@@ -167,11 +197,33 @@ const StudyRecords = () => {
   }, [records]);
 
   const changeMonth = (offset) => {
+    const currentMonth = getCurrentMonth();
+
     setCalendarMonth((current) => {
-      const next = new Date(current);
-      next.setMonth(current.getMonth() + offset);
-      return next;
+      const nextMonth = new Date(current.getFullYear(), current.getMonth() + offset, 1);
+      if (nextMonth > currentMonth) return current;
+      if (calendarYears.length && nextMonth.getFullYear() < calendarYears[0]) return current;
+      return nextMonth;
     });
+  };
+
+  const changeYear = (event) => {
+    const year = Number(event.target.value);
+    const currentDate = new Date();
+    const month = year === currentDate.getFullYear()
+      ? Math.min(calendarMonth.getMonth(), currentDate.getMonth())
+      : calendarMonth.getMonth();
+
+    setCalendarMonth(new Date(year, month, 1));
+  };
+
+  const changeCalendarMonth = (event) => {
+    const month = Number(event.target.value);
+    const nextMonth = new Date(calendarMonth.getFullYear(), month, 1);
+
+    if (nextMonth <= getCurrentMonth()) {
+      setCalendarMonth(nextMonth);
+    }
   };
 
   const toggleTask = (recordId, taskId) => {
@@ -181,6 +233,11 @@ const StudyRecords = () => {
       [key]: !current[key],
     }));
   };
+
+  const isCurrentCalendarMonth = (
+    calendarMonth.getFullYear() === getCurrentMonth().getFullYear()
+    && calendarMonth.getMonth() === getCurrentMonth().getMonth()
+  );
 
   useEffect(() => {
     const fetchRecords = async () => {
@@ -222,7 +279,6 @@ const StudyRecords = () => {
           <div>
             <span>学习记录</span>
             <h1>今天也在进步</h1>
-            <p>把每一天的任务、时间和总结整理起来，慢慢看见成长的轨迹。</p>
           </div>
           <div className={styles.stats}>
             <div>
@@ -267,16 +323,44 @@ const StudyRecords = () => {
           <aside className={styles.calendarPanel}>
             <div className={styles.calendarHeader}>
               <button type="button" onClick={() => changeMonth(-1)} aria-label="上个月">
-                ?
+                &lsaquo;
               </button>
-              <strong>{calendarMonth.getFullYear()}年{calendarMonth.getMonth() + 1}月</strong>
-              <button type="button" onClick={() => changeMonth(1)} aria-label="下个月">
-                ?
+              <div className={styles.calendarTitle}>
+                <label className={styles.yearPicker}>
+                  <select
+                    value={calendarMonth.getFullYear()}
+                    onChange={changeYear}
+                    aria-label="选择年份"
+                  >
+                    {calendarYears.map((year) => (
+                      <option key={year} value={year}>{year}年</option>
+                    ))}
+                  </select>
+                </label>
+                <label className={styles.monthPicker}>
+                  <select
+                    value={calendarMonth.getMonth()}
+                    onChange={changeCalendarMonth}
+                    aria-label="选择月份"
+                  >
+                    {calendarMonths.map((month) => (
+                      <option key={month} value={month}>{month + 1}月</option>
+                    ))}
+                  </select>
+                </label>
+              </div>
+              <button
+                type="button"
+                onClick={() => changeMonth(1)}
+                aria-label="下个月"
+                disabled={isCurrentCalendarMonth}
+              >
+                &rsaquo;
               </button>
             </div>
 
             <div className={styles.weekdays}>
-              {['日', '?', '二', '三', '四', '五', '六'].map((day) => (
+              {['日', '一', '二', '三', '四', '五', '六'].map((day) => (
                 <span key={day}>{day}</span>
               ))}
             </div>

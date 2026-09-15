@@ -62,5 +62,29 @@
     "createdAt": "2026-09-04T08:54:47.468Z",
     "updatedAt": "2026-09-10T13:50:18.091Z",
     "__v": 0
+  },
+  {
+    "_id": "6aa8b64b1b7e2e4ce6a70d41",
+    "name": "linux",
+    "author": "6aa253bdafe443e6e79b97a5",
+    "createdAt": "2026-09-15T03:06:51.782Z",
+    "updatedAt": "2026-09-15T03:06:51.782Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aa8b6501b7e2e4ce6a70d42",
+    "name": "shell",
+    "author": "6aa253bdafe443e6e79b97a5",
+    "createdAt": "2026-09-15T03:06:56.023Z",
+    "updatedAt": "2026-09-15T03:06:56.023Z",
+    "__v": 0
+  },
+  {
+    "_id": "6aa8b6531b7e2e4ce6a70d43",
+    "name": "bash",
+    "author": "6aa253bdafe443e6e79b97a5",
+    "createdAt": "2026-09-15T03:06:59.199Z",
+    "updatedAt": "2026-09-15T03:06:59.199Z",
+    "__v": 0
   }
 ]

@@ -165,21 +165,71 @@
   align-items: center;
 }
 
-.calendarHeader strong {
-  text-align: center;
+.calendarTitle {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+.yearPicker {
+  display: inline-flex;
+  min-width: 0;
+}
+
+.yearPicker select,
+.monthPicker select {
+  max-width: 100%;
+  padding: 2px 1px;
+  border: 0;
+  background: transparent;
   color: #172033;
-  font-size: 16px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+}
+
+.monthPicker {
+  display: inline-flex;
+  min-width: 0;
+}
+
+.monthPicker select {
+  font-weight: 700;
+}
+
+.yearPicker select:focus-visible,
+.monthPicker select:focus-visible {
+  border-radius: 4px;
+  box-shadow: 0 0 0 3px rgba(46, 195, 237, 0.16);
 }
 
 .calendarHeader button {
   width: 32px;
   height: 32px;
-  border: 0;
+  border: 1px solid transparent;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.74);
+  background: transparent;
   color: #0e9fb5;
-  font-size: 22px;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1;
   cursor: pointer;
+}
+
+.calendarHeader button:hover {
+  border-color: rgba(14, 159, 181, 0.18);
+  background: rgba(14, 159, 181, 0.08);
+}
+
+.calendarHeader button:disabled,
+.calendarHeader button:disabled:hover {
+  border-color: transparent;
+  background: transparent;
+  color: #cbd5e1;
+  cursor: default;
 }
 
 .weekdays,
@@ -218,7 +268,12 @@
 }
 
 .pastDay {
+  color: #172033;
   cursor: pointer;
+}
+
+.pastDay.mutedDay {
+  opacity: 1;
 }
 
 .pastDay:hover {

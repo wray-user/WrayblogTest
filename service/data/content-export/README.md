@@ -32,3 +32,34 @@ already exist, set `WRAY_PASSWORD` for the new account:
 ```text
 npm run import:content
 ```
+
+## Version control workflow
+
+The JSON files and referenced media in this directory are intended to be
+committed to Git. They are the portable content snapshot; the live MongoDB
+database itself should not be committed.
+
+On the local machine, export the latest database content before pushing:
+
+```text
+cd service
+npm run export:content
+cd ..
+git add service/data/content-export
+git commit -m "chore: update content export"
+git push origin master
+```
+
+On the cloud server, pull the snapshot and restore it into the cloud MongoDB:
+
+```text
+git pull --ff-only origin master
+cd service
+npm ci
+npm run import:content -- --dry-run
+npm run import:content
+```
+
+Keep `service/.env` only on the machine where the service runs. It must contain
+the target MongoDB connection string and, when importing into an empty
+database, `WRAY_PASSWORD` for the initial Wray account.

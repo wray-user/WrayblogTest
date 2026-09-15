@@ -1,7 +1,7 @@
 {
   "format": "wrayblog-content-export",
   "version": 1,
-  "exportedAt": "2026-09-12T15:24:27.397Z",
+  "exportedAt": "2026-09-15T12:23:30.012Z",
   "database": "wrayblog",
   "includedCollections": [
     "users-public",
@@ -23,10 +23,10 @@
   ],
   "counts": {
     "users": 2,
-    "posts": 13,
+    "posts": 18,
     "categoryTags": 22,
-    "tags": 8,
-    "images": 33,
+    "tags": 11,
+    "images": 40,
     "videos": 0,
     "audios": 0
   },
@@ -527,6 +527,111 @@
         "createdAt": "2026-09-12T10:41:48.925Z",
         "updatedAt": "2026-09-12T10:41:48.925Z",
         "file": "media/images/6aa52c6ccbd547ca0518ef82.jpg"
+      },
+      {
+        "id": "6aa7cfc2631c39ed1a94d576",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 174686,
+        "duration": 0,
+        "uploader": {
+          "id": "6aa253bdafe443e6e79b97a5",
+          "username": "Wray",
+          "nickname": "Wray"
+        },
+        "createdAt": "2026-09-14T10:43:14.867Z",
+        "updatedAt": "2026-09-14T10:43:14.867Z",
+        "file": "media/images/6aa7cfc2631c39ed1a94d576.png"
+      },
+      {
+        "id": "6aa7d0d3631c39ed1a94d577",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 25940,
+        "duration": 0,
+        "uploader": {
+          "id": "6aa253bdafe443e6e79b97a5",
+          "username": "Wray",
+          "nickname": "Wray"
+        },
+        "createdAt": "2026-09-14T10:47:47.124Z",
+        "updatedAt": "2026-09-14T10:47:47.124Z",
+        "file": "media/images/6aa7d0d3631c39ed1a94d577.png"
+      },
+      {
+        "id": "6aa7d190631c39ed1a94d578",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 108655,
+        "duration": 0,
+        "uploader": {
+          "id": "6aa253bdafe443e6e79b97a5",
+          "username": "Wray",
+          "nickname": "Wray"
+        },
+        "createdAt": "2026-09-14T10:50:56.831Z",
+        "updatedAt": "2026-09-14T10:50:56.831Z",
+        "file": "media/images/6aa7d190631c39ed1a94d578.png"
+      },
+      {
+        "id": "6aa7d1ea631c39ed1a94d57a",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 74272,
+        "duration": 0,
+        "uploader": {
+          "id": "6aa253bdafe443e6e79b97a5",
+          "username": "Wray",
+          "nickname": "Wray"
+        },
+        "createdAt": "2026-09-14T10:52:26.653Z",
+        "updatedAt": "2026-09-14T10:52:26.653Z",
+        "file": "media/images/6aa7d1ea631c39ed1a94d57a.png"
+      },
+      {
+        "id": "6aa7d25d631c39ed1a94d57b",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 86996,
+        "duration": 0,
+        "uploader": {
+          "id": "6aa253bdafe443e6e79b97a5",
+          "username": "Wray",
+          "nickname": "Wray"
+        },
+        "createdAt": "2026-09-14T10:54:21.937Z",
+        "updatedAt": "2026-09-14T10:54:21.937Z",
+        "file": "media/images/6aa7d25d631c39ed1a94d57b.png"
+      },
+      {
+        "id": "6aa804fbcc3ba88069c55822",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 11267,
+        "duration": 0,
+        "uploader": {
+          "id": "6aa253bdafe443e6e79b97a5",
+          "username": "Wray",
+          "nickname": "Wray"
+        },
+        "createdAt": "2026-09-14T14:30:19.180Z",
+        "updatedAt": "2026-09-14T14:30:19.180Z",
+        "file": "media/images/6aa804fbcc3ba88069c55822.png"
+      },
+      {
+        "id": "6aa8b1771b7e2e4ce6a70d3d",
+        "originalName": "image.png",
+        "mimeType": "image/png",
+        "size": 98346,
+        "duration": 0,
+        "uploader": {
+          "id": "6aa253bdafe443e6e79b97a5",
+          "username": "Wray",
+          "nickname": "Wray"
+        },
+        "createdAt": "2026-09-15T02:46:15.301Z",
+        "updatedAt": "2026-09-15T02:46:15.301Z",
+        "file": "media/images/6aa8b1771b7e2e4ce6a70d3d.png"
       }
     ],
     "videos": [],
